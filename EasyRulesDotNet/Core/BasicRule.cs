@@ -4,7 +4,7 @@ namespace EasyRulesDotNet.Core
 
     public class BasicRule : IRule
     {
-        public BasicRule(string name)
+        protected BasicRule(string name)
         {
             Name = name;
         }
@@ -15,9 +15,13 @@ namespace EasyRulesDotNet.Core
 
         public string Name { get; set; }
 
-        public virtual bool Evaluate<T>(Facts<T> facts)
+        public virtual bool Evaluate(Facts facts)
         {
             return false;
+        }
+
+        public virtual void Execute(Facts facts)
+        {
         }
     }
 }

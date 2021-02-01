@@ -1,6 +1,7 @@
 namespace EasyRulesDotNet.Api
 {
-    public class IRulesEngine
+    public interface IRulesEngine
     {
+        void Fire(Rules rules, Facts facts);
     }
 }

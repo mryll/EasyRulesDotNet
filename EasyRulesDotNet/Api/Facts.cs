@@ -1,8 +1,13 @@
 namespace EasyRulesDotNet.Api
 {
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
+
+    public class Facts : Facts<Object>
+    {
+    }
 
     public class Facts<T> : IEnumerable<Fact<T>>
     {
