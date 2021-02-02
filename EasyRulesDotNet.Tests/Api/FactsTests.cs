@@ -22,8 +22,8 @@ namespace EasyRulesDotNet.Tests.Api
         [Fact]
         public void Facts_add()
         {
-            Fact<int> fact1 = new Fact<int>("foo", 1);
-            Fact<int> fact2 = new Fact<int>("bar", 2);
+            Fact<int> fact1 = new("foo", 1);
+            Fact<int> fact2 = new("bar", 2);
 
             _facts.Add(fact1);
             _facts.Add(fact2);
@@ -45,11 +45,19 @@ namespace EasyRulesDotNet.Tests.Api
         [Fact]
         public void Facts_remove()
         {
-            Fact<int> fact = new Fact<int>("foo", 1);
+            Fact<int> fact = new("foo", 1);
             _facts.Add(fact);
             _facts.Remove(fact);
 
             _facts.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void Facts_clear()
+        {
+            Facts facts = new() {new Fact<object>("foo", 1)};
+            facts.Clear();
+            facts.Should().BeEmpty();
         }
     }
 }

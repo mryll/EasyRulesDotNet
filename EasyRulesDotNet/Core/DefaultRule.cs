@@ -8,7 +8,8 @@
         private readonly IList<IAction> _actions;
         private readonly ICondition _condition;
 
-        public DefaultRule(string name, ICondition condition, IList<IAction> actions) : base(name)
+        public DefaultRule(string name, string description, int priority, ICondition condition,
+            IList<IAction> actions) : base(name, description, priority)
         {
             _condition = condition;
             _actions = actions;
