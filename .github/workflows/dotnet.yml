@@ -30,6 +30,6 @@ jobs:
     - name: Code Coverage
       uses: codecov/codecov-action@v1
       with:
-        files: /home/runner/work/EasyRulesDotNet/EasyRulesDotNet/EasyRulesDotNet.Tests/coverage.json
+        files: /home/runner/work/EasyRulesDotNet/EasyRulesDotNet/coverage.json
         fail_ci_if_error: true # optional (default = false)
         verbose: false # optional (default = false)
