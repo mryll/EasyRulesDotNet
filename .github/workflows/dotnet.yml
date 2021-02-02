@@ -25,6 +25,8 @@ jobs:
       run: dotnet test --no-build --verbosity normal
     - name: Install Coverlet
       run: dotnet tool install --global coverlet.console       
+    - name: Generate Code Coverage
+      run: coverlet /home/runner/work/EasyRulesDotNet/EasyRulesDotNet/EasyRulesDotNet.Tests/bin/Debug/net5.0/EasyRulesDotNet.Tests.dll --target "dotnet" --targetargs "test /home/runner/work/EasyRulesDotNet/EasyRulesDotNet/EasyRulesDotNet.Tests.csproj --no-build" 
     - name: Code Coverage
       uses: codecov/codecov-action@v1
       with:
