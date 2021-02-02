@@ -28,7 +28,6 @@ jobs:
     - name: Code Coverage
       uses: codecov/codecov-action@v1
       with:
-        files: EasyRulesDotNet.Tests/coverage.json
-        name: codecov-umbrella # optional
+        files: /home/runner/work/EasyRulesDotNet/EasyRulesDotNet/EasyRulesDotNet.Tests/coverage.json
         fail_ci_if_error: true # optional (default = false)
-        verbose: true # optional (default = false)
+        verbose: false # optional (default = false)
