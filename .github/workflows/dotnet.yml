@@ -23,3 +23,12 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: Install Coverlet
+      run: dotnet tool install --global coverlet.console       
+    - name: Code Coverage
+      uses: codecov/codecov-action@v1
+      with:
+        files: EasyRulesDotNet.Tests/coverage.json
+        name: codecov-umbrella # optional
+        fail_ci_if_error: true # optional (default = false)
+        verbose: true # optional (default = false)
