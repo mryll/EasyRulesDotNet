@@ -6,13 +6,13 @@ namespace EasyRulesDotNet.Tests.Core
 
     public abstract class AbstractTest
     {
-        protected readonly Facts Facts;
-
-        protected readonly Mock<IRule> Rule1 = new();
-        protected readonly Rules Rules;
-
-        protected readonly DefaultRulesEngine RulesEngine;
         protected object Fact1, Fact2;
+        protected Facts Facts;
+
+        protected Mock<IRule> Rule1 = new();
+        protected Rules Rules;
+
+        protected DefaultRulesEngine RulesEngine;
 
         protected AbstractTest()
         {

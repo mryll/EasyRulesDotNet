@@ -9,6 +9,11 @@ namespace EasyRulesDotNet.Api
     {
         private readonly HashSet<IRule> _rules = new();
 
+        public Rules(params IRule[] rules)
+        {
+            _rules.UnionWith(rules);
+        }
+
         public IEnumerator<IRule> GetEnumerator()
         {
             return _rules.GetEnumerator();
@@ -19,6 +24,10 @@ namespace EasyRulesDotNet.Api
             return GetEnumerator();
         }
 
+        /// <summary>
+        ///     Register one or more new rules.
+        /// </summary>
+        /// <param name="rules">Rules to register, must not be null</param>
         public void Register(params IRule[] rules)
         {
             foreach (var rule in rules)

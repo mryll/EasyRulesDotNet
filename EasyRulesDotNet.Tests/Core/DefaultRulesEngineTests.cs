@@ -20,7 +20,7 @@ namespace EasyRulesDotNet.Tests.Core
 
             RulesEngine.Fire(Rules, Facts);
 
-            Rule1.Verify(rule => rule.Evaluate(Facts));
+            Rule1.Verify(rule => rule.Execute(Facts), Times.Once);
         }
 
         [Fact]
