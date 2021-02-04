@@ -15,13 +15,23 @@ namespace EasyRulesDotNet.Tests.Core
         }
 
         [Fact]
-        public void Compare_to()
+        public void Compare_to_same_rule()
         {
             FirstRule rule1 = new();
             FirstRule rule2 = new();
 
             rule1.CompareTo(rule2).Should().Be(0);
             rule2.CompareTo(rule1).Should().Be(0);
+        }
+
+        [Fact]
+        public void Compare_to_distinct_rule()
+        {
+            FirstRule rule1 = new();
+            SecondRule rule2 = new();
+
+            rule1.CompareTo(rule2).Should().Be(-1);
+            rule2.CompareTo(rule1).Should().Be(1);
         }
 
         [Fact]
@@ -33,7 +43,7 @@ namespace EasyRulesDotNet.Tests.Core
 
             Rules = new Rules(rule1, rule2, rule3);
 
-            DefaultRulesEngine.Check(Rules, Facts);
+            RulesEngine.Check(Rules, Facts);
 
             Rules.Should().ContainInOrder(rule1, rule2, rule3);
         }
