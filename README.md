@@ -1,4 +1,4 @@
-# EasyRulesDotNet 
+# EasyRulesDotNet (WIP)
 
 .NET implementation of EasyRules ( https://github.com/j-easy/easy-rules )
 
