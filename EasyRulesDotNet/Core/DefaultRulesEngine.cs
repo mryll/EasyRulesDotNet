@@ -5,6 +5,12 @@ namespace EasyRulesDotNet.Core
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    ///     Default <see cref="IRulesEngine" /> implementation.
+    ///     Rules are fired according to their natural order which is priority by default.
+    ///     This implementation iterates over the sorted set of rules, evaluates the condition
+    ///     of each rule and executes its actions if the condition evaluates to true.
+    /// </summary>
     public class DefaultRulesEngine : AbstractRulesEngine
     {
         public void Fire(Rules rules, Facts facts)
